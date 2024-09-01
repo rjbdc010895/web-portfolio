@@ -1,0 +1,105 @@
+.contact-section {
+    padding: 2rem;
+    background-color: #31333B;
+    color: #ffffff;
+}
+
+.contact-section p {
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.0rem;
+    opacity: 0;
+    /* Initial hidden state for animation */
+    transform: translateY(20px);
+    /* Initial position for animation */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    /* Smooth animation */
+    text-align: center;
+}
+
+.contact-hr {
+    width: 10rem;
+    /* Set the width of the hr */
+    height: 2px;
+    background-color: #349beb;
+    border: none;
+    margin: 0.5rem auto 1.5rem;
+    /* Center hr using auto margin */
+    opacity: 0;
+    /* Initial hidden state for animation */
+    transform: translateY(20px);
+    /* Initial position for animation */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    /* Smooth animation */
+}
+
+.contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.show-title hr,
+.show-title h2 {
+    opacity: 1;
+    transform: translateY(0);
+    /* Center hr using auto margin */
+
+}
+
+.contact-form-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #282a2f;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #686b72;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #349beb;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submit-button:hover {
+    border-color: #349beb;
+    box-shadow: 0 0 10px rgba(52, 155, 235, 0.75);
+    cursor: pointer;
+}
