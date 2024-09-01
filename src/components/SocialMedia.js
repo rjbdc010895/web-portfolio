@@ -12,7 +12,7 @@ const SocialMedia = () => {
     <section className="social-media-section">
       <div className="social-media-icons">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/robertjan.delacruz"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon"
@@ -20,7 +20,7 @@ const SocialMedia = () => {
           <FaFacebook />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/rj.delacruz08/"
           target="_blank"
           rel="noopener noreferrer"
           className="social-icon"
