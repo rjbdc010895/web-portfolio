@@ -26,7 +26,7 @@ const Contact = () => {
       <h2>Contact Me</h2>
       <hr className="contact-hr" />
       <div className="contact-content">
-        <p>If you like to get in touch, feel free to reach out via email</p>
+        <p>Let's build something together!</p>
       </div>
       <div className="contact-form-section">
         <form className="contact-form">
