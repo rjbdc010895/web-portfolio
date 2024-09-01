@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Skills.css";
 import {
   FaJsSquare,
@@ -27,21 +27,27 @@ import JavaIcon from "../assets/svg/java.svg";
 const Skills = () => {
   const skillsRef = useRef([]);
   const sectionRef = useRef(null);
+  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const skills = [
-    { name: "C#", icon: CsharpIcon },
-    { name: ".Net Core", icon: DotNetCoreIcon },
-    { name: "JavaScript", icon: JavaScriptIcon },
-    { name: "React", icon: ReactIcon },
-    { name: "Node.js", icon: NodeJsIcon },
-    { name: "HTML & CSS", icon: HtmlCssIcon },
-    { name: "SQL", icon: SQLIcon },
-    { name: "Python", icon: PythonIcon },
-    { name: "Java", icon: JavaIcon },
-    { name: "API", icon: APIIcon },
-    { name: "Git & GitHub", icon: GitIcon },
-    { name: "Docker", icon: DockerIcon },
-    { name: "Responsive Design", icon: ResponsiveDesignIcon },
+    { name: "C#", icon: CsharpIcon, yearsOfExperience: 9 },
+    { name: ".Net Core", icon: DotNetCoreIcon, yearsOfExperience: 5 },
+    { name: "JavaScript", icon: JavaScriptIcon, yearsOfExperience: 9 },
+    { name: "React", icon: ReactIcon, yearsOfExperience: 4 },
+    { name: "Node.js", icon: NodeJsIcon, yearsOfExperience: 4 },
+    { name: "HTML & CSS", icon: HtmlCssIcon, yearsOfExperience: 9 },
+    { name: "SQL", icon: SQLIcon, yearsOfExperience: 9 },
+    { name: "Python", icon: PythonIcon, yearsOfExperience: 2 },
+    { name: "Java", icon: JavaIcon, yearsOfExperience: 9 },
+    { name: "API", icon: APIIcon, yearsOfExperience: 4 },
+    { name: "Git & GitHub", icon: GitIcon, yearsOfExperience: 6 },
+    { name: "Docker", icon: DockerIcon, yearsOfExperience: 3 },
+    {
+      name: "Responsive Design",
+      icon: ResponsiveDesignIcon,
+      yearsOfExperience: 9,
+    },
   ];
 
   useEffect(() => {
@@ -70,6 +76,16 @@ const Skills = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const openModal = (skill) => {
+    setSelectedSkill(skill);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedSkill(null);
+    setIsModalOpen(false);
+  };
+
   return (
     <section id="skills" className="skills-section" ref={sectionRef}>
       <h2>My Skills</h2>
@@ -80,6 +96,7 @@ const Skills = () => {
             key={index}
             className="skill-card"
             ref={(el) => (skillsRef.current[index] = el)}
+            onClick={() => openModal(skill)}
           >
             <div className="skill-icon">
               <img src={skill.icon} alt={`${skill.name} icon`} />
@@ -88,6 +105,21 @@ const Skills = () => {
           </div>
         ))}
       </div>
+
+      {isModalOpen && selectedSkill && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close-button" onClick={closeModal}>
+              &times;
+            </span>
+            <h3>{selectedSkill.name}</h3>
+            <p>
+              <strong>Years of Experience:</strong>{" "}
+              {selectedSkill.yearsOfExperience} years
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

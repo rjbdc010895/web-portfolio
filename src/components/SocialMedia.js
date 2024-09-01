@@ -5,6 +5,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaGithub,
+  FaViber,
 } from "react-icons/fa";
 
 const SocialMedia = () => {
@@ -34,6 +35,14 @@ const SocialMedia = () => {
           className="social-icon"
         >
           <FaLinkedinIn />
+        </a>
+        <a
+          href="viber://contact?number=+639175041217"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="social-icon"
+        >
+          <FaViber />
         </a>
         <a
           href="https://github.com/rjbdc010895"
